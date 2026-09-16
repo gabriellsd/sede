@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+:root {
+  --discord-bg: #313338;
+  --discord-sidebar: #2b2d31;
+  --discord-server: #1e1f22;
+  --discord-input: #383a40;
+  --discord-modifier: #232428;
+  --discord-hover: #35373c;
+  --discord-active: #404249;
+  --discord-text: #dbdee1;
+  --discord-muted: #949ba4;
+  --discord-header: #f2f3f5;
+  --discord-blurple: #5865f2;
+  --discord-blurple-hover: #4752c4;
+  --discord-green: #23a559;
+  --discord-red: #da373c;
+  --discord-link: #00a8fc;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: var(--discord-server);
+  color: var(--discord-text);
+  font-family: var(--font-discord), "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.375;
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1a1b1e;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0e0f11;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.huddle-tile:fullscreen,
+.huddle-tile:-webkit-full-screen {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  border-radius: 0;
+  border: 0;
+  background: #1e1f22;
+  padding: 0;
+}
+
+.huddle-tile:fullscreen video,
+.huddle-tile:-webkit-full-screen video {
+  object-fit: contain;
+}
+
+.discord-server-btn {
+  position: relative;
+  display: grid;
+  height: 48px;
+  width: 48px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--discord-sidebar);
+  color: var(--discord-text);
+  transition: border-radius 200ms ease, background 200ms ease;
+}
+
+.discord-server-btn:hover,
+.discord-server-btn[data-active="true"] {
+  border-radius: 16px;
+}
+
+.discord-server-btn[data-home="true"] {
+  background: var(--discord-blurple);
+  color: white;
+}
+
+.discord-server-btn[data-home="true"]:hover,
+.discord-server-btn[data-home="true"][data-active="true"] {
+  background: var(--discord-blurple-hover);
+}
+
+.discord-server-btn[data-add="true"] {
+  background: var(--discord-sidebar);
+  color: var(--discord-green);
+}
+
+.discord-server-btn[data-add="true"]:hover {
+  background: var(--discord-green);
+  color: white;
+}
+
+.discord-pill {
+  position: absolute;
+  left: 0;
+  width: 4px;
+  border-radius: 0 4px 4px 0;
+  background: white;
+  transition: height 200ms ease, opacity 200ms ease;
+}
+
+.discord-channel {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 6px;
+  border-radius: 4px;
+  padding: 6px 8px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--discord-muted);
+}
+
+.discord-channel:hover {
+  background: var(--discord-hover);
+  color: var(--discord-text);
+}
+
+.discord-channel[data-active="true"] {
+  background: var(--discord-active);
+  color: white;
+}
+
+.discord-category {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 16px 8px 4px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--discord-muted);
+}
+
+.discord-category:hover {
+  color: var(--discord-text);
+}
